@@ -1,0 +1,21 @@
+<h1 mat-dialog-title> Create Form</h1>
+<form [formGroup]="newForm" (submit)="onAddForm()">
+<div mat-dialog-content>
+  <p>Name</p>
+  <mat-form-field appearance="outline">
+    <mat-label >Name</mat-label>
+    <input matInput formControlName="name">
+    <mat-error *ngIf="newForm.get('name').touched && newForm.get('name')?.errors?.required">please Enter Name</mat-error>
+  </mat-form-field>
+  <p>Description</p>
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <textarea matInput placeholder="Textarea" formControlName="description"></textarea>
+    <mat-error *ngIf="newForm.get('description').touched && newForm.get('description')?.errors?.required">please Enter description</mat-error>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" [disabled]="!newForm.valid">Submit</button>
+</div>
+</form>
