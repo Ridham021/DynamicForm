@@ -10,6 +10,8 @@ public interface FormService {
 
     public List<Form> getAllForm();
 
+    public Form getFormById(int formId);
+
     public Form addForm(Form form);
 
 

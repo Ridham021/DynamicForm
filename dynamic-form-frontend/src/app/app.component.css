@@ -1,0 +1,9 @@
+.card{
+  margin: auto;
+  width: 40rem;
+  cursor: pointer;
+}
+
+.btn{
+  margin:20px;
+}

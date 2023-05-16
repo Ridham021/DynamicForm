@@ -1,13 +1,22 @@
 
 
-<!--<div>-->
-<!--  <h2>Job Application for Heroes</h2>-->
-<!--  <app-show-form [questions]="questions$ | async"></app-show-form>-->
-<!--</div>-->
 
-<div style="margin: 20px">
-<button mat-raised-button color="primary" (click)="openCreateFormDialog()">Add Form</button>
+<mat-toolbar color="primary">
+  <span>Dynamic Form</span>
+  <span class="example-spacer"></span>
+
+</mat-toolbar>
+
+<div>
+<button class="btn" mat-raised-button color="primary" (click)="openCreateFormDialog()">Add Form</button>
 </div>
+
+<mat-card *ngFor="let f of formArray;let index=i" class="card" (click)="onCardClick(f)">
+  <mat-card-header >
+    <mat-card-title>{{f.name}}</mat-card-title>
+    <mat-card-subtitle>{{f.description}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
 
 
 
